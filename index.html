@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dr. Anitha M — Learning Designer | Researcher | Educator</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:        #f8fffe;
+  --bg2:       #eef8f7;
+  --bg3:       #ddf0ee;
+  --teal:      #0d9488;
+  --teal-dim:  rgba(13,148,136,0.10);
+  --white:     #0d1f1d;
+  --muted:     #4a7572;
+  --faint:     rgba(13,31,29,0.60);
+  --border:    rgba(13,148,136,0.20);
+  --f-display: 'Playfair Display', Georgia, serif;
+  --f-body:    'IBM Plex Sans', sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--f-body);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+.evolving-banner {
+  position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+  text-align: center;
+  padding: 0.45rem 2rem;
+  background: rgba(13,148,136,0.10);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem 5rem;
+  background: rgba(248,255,254,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--f-mono); font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.12em; color: var(--teal);
+  text-decoration: none; text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 2.8rem; list-style: none; }
+.nav-links a {
+  font-size: 0.8rem; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--teal); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 11rem 5rem 5rem;
+  position: relative; overflow: hidden;
+}
+.hero-glow {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,148,136,0.08) 0%, transparent 70%);
+  top: -80px; right: -80px;
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 4rem; align-items: center; max-width: 1200px;
+}
+.hero-left { max-width: 680px; }
+.hero-label {
+  font-family: var(--f-mono); font-size: 0.72rem; font-weight: 400;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal);
+  margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;
+}
+.hero-label::before { content: ''; width: 2.5rem; height: 1px; background: var(--teal); opacity: 0.6; }
+h1 {
+  font-family: var(--f-display); font-size: clamp(2.6rem, 4.5vw, 4rem);
+  font-weight: 500; line-height: 1.12; letter-spacing: -0.01em;
+  margin-bottom: 1.6rem; color: var(--white);
+}
+h1 em { font-style: italic; color: var(--teal); }
+.hero-bio {
+  font-size: 1rem; color: var(--faint); line-height: 1.85;
+  max-width: 540px; margin-bottom: 2.8rem; font-weight: 300;
+}
+.hero-bio strong { color: rgba(13,31,29,0.85); font-weight: 400; }
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 2rem; background: var(--teal); color: var(--bg);
+  font-family: var(--f-body); font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: #0f766e; transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 2rem; background: transparent;
+  border: 1px solid var(--border); color: var(--muted);
+  font-family: var(--f-body); font-size: 0.78rem; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+/* Photo */
+.hero-photo { width: 260px; height: 320px; position: relative; flex-shrink: 0; }
+.photo-inner {
+  width: 100%; height: 100%; background: var(--bg3);
+  border: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 0.8rem;
+}
+.photo-inner svg { opacity: 0.2; }
+.photo-inner p {
+  font-family: var(--f-mono); font-size: 0.65rem;
+  color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase;
+}
+.photo-frame-deco {
+  position: absolute; top: 10px; right: -10px; bottom: -10px; left: 10px;
+  border: 1px solid rgba(13,148,136,0.20); z-index: -1; pointer-events: none;
+}
+
+/* ── SECTION BASE ── */
+section { padding: 6rem 5rem; }
+section.alt { background: var(--bg2); }
+.section-eyebrow {
+  font-family: var(--f-mono); font-size: 0.68rem; font-weight: 400;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal);
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;
+}
+.section-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--teal); opacity: 0.6; }
+h2 {
+  font-family: var(--f-display); font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 500; line-height: 1.15; letter-spacing: -0.01em;
+  margin-bottom: 0.8rem;
+}
+.section-sub {
+  font-size: 0.9rem; color: var(--faint);
+  max-width: 520px; margin-bottom: 3.5rem; line-height: 1.8;
+}
+
+/* ── ABOUT ── */
+.about-layout { display: flex; flex-direction: column; gap: 3rem; max-width: 860px; }
+.about-body p { font-size: 0.93rem; color: var(--faint); line-height: 1.9; margin-bottom: 1.2rem; }
+.about-body p:last-child { margin-bottom: 0; }
+.about-body p strong { color: var(--white); font-weight: 400; }
+
+.credentials {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--border); border: 1px solid var(--border);
+}
+.cred { padding: 1.4rem 1.6rem; background: var(--bg2); transition: background 0.2s; }
+.cred:hover { background: var(--bg3); }
+.cred-year { font-family: var(--f-mono); font-size: 0.65rem; color: var(--teal); letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+.cred-inst { font-size: 0.88rem; font-weight: 500; color: var(--white); margin-bottom: 0.2rem; }
+.cred-deg { font-size: 0.78rem; color: var(--muted); }
+
+/* ── PROJECTS — TABBED ── */
+.tab-row {
+  display: flex; gap: 0;
+  border: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+  width: fit-content;
+}
+.tab-btn {
+  padding: 0.65rem 1.6rem; background: transparent;
+  border: none; border-right: 1px solid var(--border);
+  font-family: var(--f-mono); font-size: 0.65rem; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); cursor: pointer; transition: all 0.18s;
+  white-space: nowrap;
+}
+.tab-btn:last-child { border-right: none; }
+.tab-btn:hover { color: var(--teal); background: var(--teal-dim); }
+.tab-btn.active { color: var(--bg); background: var(--teal); }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.projects-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border); border: 1px solid var(--border);
+}
+
+/* Card */
+.project-card {
+  background: var(--bg); padding: 2rem;
+  display: flex; flex-direction: column;
+  text-decoration: none; transition: background 0.2s;
+}
+.project-card:hover { background: var(--bg3); }
+.project-card.wip { opacity: 0.65; }
+.project-card.wip:hover { opacity: 1; }
+
+.card-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; margin-bottom: 1.2rem;
+}
+.card-cat {
+  font-family: var(--f-mono); font-size: 0.6rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal);
+}
+.live-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal); flex-shrink: 0; margin-top: 4px;
+  box-shadow: 0 0 6px var(--teal);
+}
+.wip-badge {
+  font-family: var(--f-mono); font-size: 0.58rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--border);
+  padding: 0.1rem 0.5rem; flex-shrink: 0;
+}
+
+.card-title {
+  font-family: var(--f-display); font-size: 1rem; font-weight: 500;
+  color: var(--white); line-height: 1.35; margin-bottom: 0.5rem;
+}
+.card-date {
+  font-family: var(--f-mono); font-size: 0.62rem;
+  color: var(--muted); letter-spacing: 0.06em; margin-bottom: 0.9rem;
+}
+.card-desc {
+  font-size: 0.82rem; color: var(--faint);
+  line-height: 1.75; margin-bottom: 1.5rem; flex: 1;
+}
+.card-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.5rem; }
+.chip {
+  padding: 0.18rem 0.55rem; background: var(--teal-dim);
+  border: 1px solid rgba(13,148,136,0.22);
+  font-family: var(--f-mono); font-size: 0.58rem;
+  color: var(--teal); letter-spacing: 0.05em;
+}
+.card-link {
+  font-family: var(--f-mono); font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  transition: gap 0.18s; margin-top: auto;
+}
+.card-link:hover { gap: 0.7rem; }
+.card-link.disabled { color: var(--muted); pointer-events: none; }
+.game-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; margin-top: auto; padding-top: 0.5rem; }
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border); border: 1px solid var(--border);
+}
+.skill-block { background: var(--bg2); padding: 2rem; transition: background 0.2s; }
+.skill-block:hover { background: var(--bg3); }
+.skill-num { font-family: var(--f-mono); font-size: 0.62rem; color: var(--teal); letter-spacing: 0.15em; margin-bottom: 1rem; }
+.skill-name { font-family: var(--f-display); font-size: 1rem; font-weight: 500; color: var(--white); margin-bottom: 0.7rem; }
+.skill-list { font-size: 0.78rem; color: var(--muted); line-height: 1.8; }
+
+/* ── CONTACT ── */
+#contact { text-align: center; position: relative; overflow: hidden; }
+#contact .section-eyebrow { justify-content: center; }
+#contact .section-eyebrow::before { display: none; }
+#contact h2 { margin: 0 auto 0.8rem; }
+#contact .section-sub { margin: 0 auto 2.5rem; }
+.contact-glow {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 50% 80% at 50% 100%, rgba(13,148,136,0.08) 0%, transparent 70%);
+}
+.contact-inner { position: relative; z-index: 1; }
+.contact-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 1.8rem 5rem; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: var(--f-mono); font-size: 0.65rem;
+  color: var(--muted); letter-spacing: 0.06em;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fu { opacity: 0; animation: fadeUp 0.65s ease forwards; }
+.d1 { animation-delay: 0.1s; } .d2 { animation-delay: 0.25s; }
+.d3 { animation-delay: 0.4s; } .d4 { animation-delay: 0.55s; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.tab-panel.active { animation: fadeIn 0.25s ease; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { display: none; }
+  #hero { padding: 7rem 1.5rem 4rem; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-photo { display: none; }
+  section { padding: 4rem 1.5rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .credentials { grid-template-columns: 1fr; }
+  .tab-row { flex-wrap: wrap; width: 100%; }
+  .tab-btn { border-right: none; border-bottom: 1px solid var(--border); flex: 1; text-align: center; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Dr. Anitha M</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<div class="evolving-banner">
+  Currently completing Ed.M. at Harvard GSE (May 2026) — this portfolio grows with each project.
+</div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-label fu d1">Harvard Graduate School of Education · Ed.M. 2026</div>
+      <p class="hero-bio fu d3">
+        I am <strong>Dr. Anitha M</strong> — a learning designer, researcher, and educator completing my Ed.M. at Harvard GSE. I design evidence-based learning experiences that bridge research and practice, from AI-assisted instructional tools to large-scale government training programs.
+      </p>
+      <div class="hero-ctas fu d4">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="https://linkedin.com/in/dr-anitha" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="hero-photo fu d3">
+      <div class="photo-inner">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <circle cx="26" cy="19" r="10" stroke="#2dd4bf" stroke-width="1.2"/>
+          <path d="M6 46c0-11.05 8.95-20 20-20s20 8.95 20 20" stroke="#2dd4bf" stroke-width="1.2"/>
+        </svg>
+        <p>Photo coming soon</p>
+      </div>
+      <div class="photo-frame-deco"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="alt">
+  <div class="section-eyebrow">About</div>
+  <h2>Research-informed.<br/>Practice-driven.</h2>
+  <div class="about-layout">
+    <div class="about-body">
+      <p>I am a learning designer and researcher currently completing my Ed.M. at <strong>Harvard Graduate School of Education</strong> (Learning Design, Innovation & Technology), where I design instructional tools, evaluate learning programs, and explore how AI can support — rather than replace — deep human learning.</p>
+      <p>Before Harvard, I spent over a decade working across <strong>government education systems, higher education, and nonprofits in India</strong> — including leading a statewide training program for school leaders in Tamil Nadu in partnership with the State Education Department, and managing national-scale content development at IIT Madras.</p>
+      <p>My work sits at the intersection of <strong>learning science, instructional design, and educational technology</strong>. I hold a PhD in Information Science & Technology from Anna University and have published six peer-reviewed articles. My research has evolved from computational systems to the human systems of learning and organizational change.</p>
+    </div>
+    <div class="credentials">
+      <div class="cred">
+        <div class="cred-year">Expected May 2026</div>
+        <div class="cred-inst">Harvard Graduate School of Education</div>
+        <div class="cred-deg">Ed.M. — Learning Design, Innovation & Technology</div>
+      </div>
+      <div class="cred">
+        <div class="cred-year">2016</div>
+        <div class="cred-inst">Anna University, Guindy</div>
+        <div class="cred-deg">PhD, Information Science & Technology · Best Paper Award</div>
+      </div>
+      <div class="cred">
+        <div class="cred-year">2006</div>
+        <div class="cred-inst">Anna University</div>
+        <div class="cred-deg">M.E., Multimedia Technology</div>
+      </div>
+      <div class="cred">
+        <div class="cred-year">1998</div>
+        <div class="cred-inst">Madurai Kamaraj University</div>
+        <div class="cred-deg">B.E., Electronics and Communication Engineering</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-eyebrow">Portfolio</div>
+  <h2>Selected Work</h2>
+  <p class="section-sub">Projects from Harvard Ed.M. coursework and professional practice. Click a category to explore.</p>
+
+  <div class="tab-row">
+    <button class="tab-btn active" onclick="switchTab('instructional', this)">Instructional Design</button>
+    <button class="tab-btn" onclick="switchTab('ai', this)">AI in Education</button>
+    <button class="tab-btn" onclick="switchTab('research', this)">Research & Evaluation</button>
+    <button class="tab-btn" onclick="switchTab('strategy', this)">Strategy & Policy</button>
+  </div>
+
+  <!-- INSTRUCTIONAL DESIGN -->
+  <div class="tab-panel active" id="tab-instructional">
+    <div class="projects-grid">
+
+      <a href="https://anitha-76.github.io/T127-TLL-Portfolio/" target="_blank" class="project-card">
+        <div class="card-top"><div class="card-cat">Instructional Design · T127</div><div class="live-dot"></div></div>
+        <div class="card-title">Teaching & Learning Lab Practicum</div>
+        <div class="card-date">Harvard GSE · Spring 2026</div>
+        <div class="card-desc">AI-assisted interactive learning tools and a pre-course microlearning unit built as a real client project for HGSE's Teaching and Learning Lab, using Canvas LMS and Articulate Storyline.</div>
+        <div class="card-chips"><span class="chip">Canvas LMS</span><span class="chip">Articulate Storyline</span><span class="chip">Microlearning</span><span class="chip">Game-Based Learning</span></div>
+        <span class="card-link">View Portfolio →</span>
+      </a>
+
+      <div class="project-card">
+        <div class="card-top"><div class="card-cat">Instructional Design · T543</div><div class="live-dot"></div></div>
+        <div class="card-title">Research-Based Instructional Design: Lesson Prototype</div>
+        <div class="card-date">Harvard GSE · Fall 2025</div>
+        <div class="card-desc">Research-backed Grade 6 math lesson integrating 5E and CRA frameworks for under-resourced Tamil Nadu classrooms, grounded in cognitive learning sciences, bilingual pedagogy, and formative assessment principles.</div>
+        <div class="card-chips"><span class="chip">5E Model</span><span class="chip">CRA Framework</span><span class="chip">Formative Assessment</span><span class="chip">Learning Sciences</span></div>
+        <div class="game-links">
+          <a href="https://drive.google.com/file/d/1QVZYKFHY2Tvv5jYSU-AonMyYm5CZLGGs/view?usp=drive_link" target="_blank" class="card-link">View Prototype →</a>
+          <a href="https://drive.google.com/file/d/1XewrNkgoFqLwbR9VxsNY3eXCIO6tjuNr/view?usp=drive_link" target="_blank" class="card-link">View Report →</a>
+        </div>
+      </div>
+
+      <a href="https://drive.google.com/file/d/1uaCMsac23J9PX620H5jo8SFkej8n0eq-/view?usp=drive_link" target="_blank" class="project-card">
+        <div class="card-top"><div class="card-cat">Learning Design · HPL101</div><div class="live-dot"></div></div>
+        <div class="card-title">How People Learn: After-School Math Design Proposal</div>
+        <div class="card-date">Harvard GSE · Fall 2025</div>
+        <div class="card-desc">Learning design proposal for an after-school online mathematics program serving middle school students from marginalized communities in Tamil Nadu government schools. Grounded in learning science frameworks including situated learning, constructivism, metacognition, and social-emotional learning, this design addresses foundational mathematics gaps documented in ASER and State Achievement Survey data. The program integrates real-world problem-solving, peer collaboration, reflective journaling, and emotional check-ins through a low-infrastructure, mobile-accessible format, designed specifically for first-generation learners in bilingual, low-resource contexts.</div>
+        <div class="card-chips"><span class="chip">HPL Frameworks</span><span class="chip">Constructivism</span><span class="chip">SEL</span><span class="chip">Equity-Centered Design</span></div>
+        <span class="card-link">View Proposal →</span>
+      </a>
+
+      <div class="project-card">
+        <div class="card-top"><div class="card-cat">Impact Design · T522</div><div class="live-dot"></div></div>
+        <div class="card-title">Impact by Design: Teacher Autonomy & School Leadership</div>
+        <div class="card-date">Harvard GSE · Fall 2025 – Spring 2026</div>
+        <div class="card-desc">Full-semester design studio applying Lean Impact methodology to teacher autonomy in school leadership — with ecosystem mapping, iterative prototyping, and a 2-minute pitch to HGSE faculty. Culminated in a live MVP construct prototype.</div>
+        <div class="card-chips"><span class="chip">Lean Impact</span><span class="chip">Design Thinking</span><span class="chip">Stakeholder Mapping</span><span class="chip">MVP Prototyping</span></div>
+        <div class="game-links">
+          <a href="https://drive.google.com/file/d/1PCXDEHyuVbVRSmfXElcX5hFujxlbDCX1/view?usp=drive_link" target="_blank" class="card-link">View Pitch →</a>
+          <a href="https://anitha-76.github.io/MVP-Pacing-Tool/" target="_blank" class="card-link">Try Prototype →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AI IN EDUCATION -->
+  <div class="tab-panel" id="tab-ai">
+    <div class="projects-grid">
+
+      <a href="#" class="project-card wip">
+        <div class="card-top"><div class="card-cat">AI in Education · A096</div><span class="wip-badge">In Progress</span></div>
+        <div class="card-title">Metacognitive Partnership (MCP) Framework</div>
+        <div class="card-date">Harvard GSE · January 2026</div>
+        <div class="card-desc">Research-backed framework co-developed for HGSE faculty addressing how educators and students calibrate cognitive partnership with generative AI. Includes task design, rubrics, and educator PD workshop structure.</div>
+        <div class="card-chips"><span class="chip">AI Frameworks</span><span class="chip">Educator PD</span><span class="chip">Research Synthesis</span><span class="chip">Client Project</span></div>
+        <span class="card-link disabled">Coming Soon</span>
+      </a>
+
+      <a href="https://algebra-ide-app.vercel.app/" target="_blank" class="project-card">
+        <div class="card-top"><div class="card-cat">Instructional Prototype</div><div class="live-dot"></div></div>
+        <div class="card-title">Math Inquiry Studio</div>
+        <div class="card-date">Harvard GSE · T217 · In Development</div>
+        <div class="card-desc">An instructor-facilitated prototype for middle school after-school programs, built on a 5E lesson structure with Universal Design for Learning (UDL) principles. Currently focused on algebra, designed to expand across math topics.</div>
+        <div class="card-chips"><span class="chip">5E Model</span><span class="chip">UDL</span><span class="chip">Middle School</span><span class="chip">Inquiry-Based Learning</span></div>
+        <span class="card-link">Try Prototype →</span>
+      </a>
+
+      <div class="project-card">
+        <div class="card-top"><div class="card-cat">AI in Education · Vibe Coding</div><div class="live-dot"></div></div>
+        <div class="card-title">Vibe Coding: AI-Assisted Math Learning Tools</div>
+        <div class="card-date">Harvard GSE · Fall 2025</div>
+        <div class="card-desc">Built 4 interactive math learning tools using AI-assisted development — demonstrating rapid prototyping, prompt design, and game-based learning design. Tools cover prime numbers, integer operations, number systems, and algebra.</div>
+        <div class="card-chips"><span class="chip">Phaser 3</span><span class="chip">p5.js</span><span class="chip">AI Prototyping</span><span class="chip">Game-Based Learning</span></div>
+        <div class="game-links">
+          <a href="https://anitha-76.github.io/prime-number-hunt/" target="_blank" class="card-link">Prime Hunt →</a>
+          <a href="https://anitha-76.github.io/integer-space-game/" target="_blank" class="card-link">Integer Game →</a>
+          <a href="https://anitha-76.github.io/number-system-converter/" target="_blank" class="card-link">Number Converter →</a>
+          <a href="https://anitha-76.github.io/Worksheets/" target="_blank" class="card-link">Algebra Quest →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESEARCH & EVALUATION -->
+  <div class="tab-panel" id="tab-research">
+    <div class="projects-grid">
+
+      <a href="#" class="project-card wip">
+        <div class="card-top"><div class="card-cat">Program Evaluation · T523</div><span class="wip-badge">In Progress</span></div>
+        <div class="card-title">Formative Evaluation: STEAM Comic Book</div>
+        <div class="card-date">Harvard GSE · Spring 2026</div>
+        <div class="card-desc">Formative evaluation of a STEAM comic book used in an international school in Barcelona — mixed methods design using surveys, interviews, and classroom observation following AEA standards and human subjects protocols.</div>
+        <div class="card-chips"><span class="chip">Mixed Methods</span><span class="chip">Evaluation Design</span><span class="chip">IRB Protocols</span></div>
+        <span class="card-link disabled">Coming Soon</span>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1Nh2Vgt3tsUfl-_p9yBAnCkzA45D9BQGN/view?usp=drive_link" target="_blank" class="project-card">
+        <div class="card-top"><div class="card-cat">Research Methods · S510F</div><div class="live-dot"></div></div>
+        <div class="card-title">Qualitative Research Synthesis</div>
+        <div class="card-date">Harvard GSE · Fall 2025</div>
+        <div class="card-desc">Qualitative research synthesis examining student use of learning spaces, combining interview coding, ethnographic observation, and collaborative data analysis.</div>
+        <div class="card-chips"><span class="chip">Qualitative Research</span><span class="chip">Thematic Analysis</span><span class="chip">Memo Writing</span></div>
+        <span class="card-link">View Memo →</span>
+      </a>
+
+      <a href="#" class="project-card wip">
+        <div class="card-top"><div class="card-cat">Independent Research</div><span class="wip-badge">In Progress</span></div>
+        <div class="card-title">Independent Study</div>
+        <div class="card-date">Harvard GSE · 2025–2026</div>
+        <div class="card-desc">Independent research study in progress at Harvard GSE. Report forthcoming.</div>
+        <div class="card-chips"><span class="chip">Research</span><span class="chip">Harvard GSE</span></div>
+        <span class="card-link disabled">Coming Soon</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- STRATEGY & POLICY -->
+  <div class="tab-panel" id="tab-strategy">
+    <div class="projects-grid">
+
+      <a href="https://drive.google.com/file/d/1wwcge9ca248AxZ1BW7n-ItIufDSNmcg4/view?usp=drive_link" target="_blank" class="project-card">
+        <div class="card-top"><div class="card-cat">Systems Change · DEV320M</div><div class="live-dot"></div></div>
+        <div class="card-title">Scaling & Systems Change Analysis: eVidyaloka</div>
+        <div class="card-date">Harvard GSE · Fall 2025</div>
+        <div class="card-desc">Scaling analysis of eVidyaloka, a nonprofit bridging the teacher shortage crisis in India's rural government schools through volunteerism and technology. Applying the DEV320M scaling framework, including causal mapping, systems diagnosis, theory of change, and pathway analysis, this paper evaluates eVidyaloka's strategy for reaching 1 crore children across India's aspirational districts, examining the organizational, systemic, and financing conditions required to move from 2 lakh students today to sustainable impact at national scale.</div>
+        <div class="card-chips"><span class="chip">Theory of Change</span><span class="chip">Systems Thinking</span><span class="chip">Nonprofit Strategy</span></div>
+        <span class="card-link">View Analysis →</span>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1TnwXntI1pGcmQGlfMPfbYFVhXlxFGLCJ/view?usp=drive_link" target="_blank" class="project-card">
+        <div class="card-top"><div class="card-cat">Policy Analysis · A801</div><div class="live-dot"></div></div>
+        <div class="card-title">Comparative Education Policy Analysis</div>
+        <div class="card-date">Harvard GSE · Fall 2025</div>
+        <div class="card-desc">Policy analysis examining why teacher intrinsic motivation remains persistently low in Tamil Nadu government schools despite significant public investment and what can realistically be done about it. Drawing on Self-Determination Theory, international comparative evidence, and ground-level data from Tamil Nadu's 37,000 schools, this analysis identifies four interconnected root causes, evaluates four policy alternatives across equity, feasibility, scalability and flexibility criteria, and recommends a phased implementation strategy designed for a fiscally constrained public system.</div>
+        <div class="card-chips"><span class="chip">Policy Analysis</span><span class="chip">Comparative Research</span><span class="chip">Equity</span></div>
+        <span class="card-link">View Paper →</span>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1HTT1wKFpKnwS66ecD0ckbSZP-dCv-8nX/view?usp=drive_link" target="_blank" class="project-card">
+        <div class="card-top"><div class="card-cat">Organizational Strategy · A012</div><div class="live-dot"></div></div>
+        <div class="card-title">Why Innovations in Education Fail</div>
+        <div class="card-date">Harvard GSE · Fall 2025</div>
+        <div class="card-desc">Strategic analysis examining whether Sarvam AI, India's state-backed sovereign large language model, can meaningfully transform teaching and learning in vernacular K-12 classrooms. Applying Christensen's disruptive innovation theory, interdependence-modularity framework, value network analysis, and discovery-driven planning, this paper argues that Sarvam's multilingual, voice-first design positions it as education-enabling infrastructure for the 200 million+ students learning in regional languages, a market global LLMs are structurally disincentivized to serve.</div>
+        <div class="card-chips"><span class="chip">Innovation Strategy</span><span class="chip">Org Design</span><span class="chip">Disruptive Innovation</span></div>
+        <span class="card-link">View Analysis →</span>
+      </a>
+
+
+    </div>
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="alt">
+  <div class="section-eyebrow">Competencies</div>
+  <h2>Skills & Expertise</h2>
+  <p class="section-sub">Core competencies developed across 15+ years in education, research, and Harvard Ed.M. coursework.</p>
+  <div class="skills-grid">
+    <div class="skill-block">
+      <div class="skill-num">01</div>
+      <div class="skill-name">Instructional Design</div>
+      <div class="skill-list">5E Model · CRA Progression · Backward Design · UDL · Needs Analysis · Microlearning · Game-Based Learning · Canvas LMS · Articulate Storyline</div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-num">02</div>
+      <div class="skill-name">AI in Education</div>
+      <div class="skill-list">AI-Assisted Prototyping · Prompt Design for Learning · Metacognitive AI Frameworks · Generative AI Integration · Rapid Prototyping</div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-num">03</div>
+      <div class="skill-name">Research & Evaluation</div>
+      <div class="skill-list">Formative Evaluation · Mixed Methods · Qualitative Research · IRB Protocols · AEA Standards · Impact Assessment · Logic Models</div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-num">04</div>
+      <div class="skill-name">Systems & Strategy</div>
+      <div class="skill-list">Theory of Change · Stakeholder Mapping · Scaling Strategy · Lean Impact · Ecosystem Analysis · Program Design</div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-num">05</div>
+      <div class="skill-name">Training & Facilitation</div>
+      <div class="skill-list">Workshop Design · Webinar Facilitation · Capacity Building · SME Coordination · Adult Learning · Virtual & In-Person Delivery</div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-num">06</div>
+      <div class="skill-name">Technical Skills</div>
+      <div class="skill-list">HTML · CSS · JavaScript · No-Code & Low-Code Tools · Advanced Excel · Data Visualization · Educational Technology Platforms · GitHub</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-glow"></div>
+  <div class="contact-inner">
+    <div class="section-eyebrow">Contact</div>
+    <h2>Let's connect.</h2>
+    <p class="section-sub">Open to instructional design, learning experience design, and EdTech roles. Available from June 2026.</p>
+    <div class="contact-row">
+      <a href="mailto:anitha_m@gse.harvard.edu" class="btn-primary">anitha_m@gse.harvard.edu</a>
+      <a href="https://linkedin.com/in/dr-anitha" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Dr. Anitha M</span>
+  <span>Learning Designer · Researcher · Educator</span>
+</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = e.target.classList.contains('wip') ? '0.65' : '1';
+      e.target.style.transform = 'translateY(0)';
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.skill-block, .cred').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, background 0.2s';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
