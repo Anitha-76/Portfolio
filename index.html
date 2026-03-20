@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Dr. Anitha M — Learning Designer | Researcher | Educator</title>
+<title>Anitha PhD — Learning Designer | Researcher | Education Strategist</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -21,11 +21,12 @@
   --f-mono:    'IBM Plex Mono', monospace;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
 body {
   background: var(--bg);
   color: var(--white);
   font-family: var(--f-body);
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.75;
   overflow-x: hidden;
@@ -58,7 +59,7 @@ nav {
 }
 .nav-links { display: flex; gap: 2.8rem; list-style: none; }
 .nav-links a {
-  font-size: 0.8rem; font-weight: 400;
+  font-size: 0.85rem; font-weight: 400;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--muted); text-decoration: none; transition: color 0.2s;
 }
@@ -66,9 +67,9 @@ nav {
 
 /* ── HERO ── */
 #hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 11rem 5rem 5rem;
+  padding: 7rem 5rem 3.5rem;
   position: relative; overflow: hidden;
 }
 .hero-glow {
@@ -86,18 +87,18 @@ nav {
 .hero-label {
   font-family: var(--f-mono); font-size: 0.72rem; font-weight: 400;
   letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal);
-  margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;
 }
 .hero-label::before { content: ''; width: 2.5rem; height: 1px; background: var(--teal); opacity: 0.6; }
 h1 {
-  font-family: var(--f-display); font-size: clamp(2.6rem, 4.5vw, 4rem);
-  font-weight: 500; line-height: 1.12; letter-spacing: -0.01em;
-  margin-bottom: 1.6rem; color: var(--white);
+  font-family: var(--f-display); font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 500; line-height: 1.2; letter-spacing: -0.01em;
+  margin-bottom: 0.75rem; color: var(--white);
 }
 h1 em { font-style: italic; color: var(--teal); }
 .hero-bio {
   font-size: 1rem; color: var(--faint); line-height: 1.85;
-  max-width: 540px; margin-bottom: 2.8rem; font-weight: 300;
+  max-width: 540px; margin-bottom: 2rem; font-weight: 300;
 }
 .hero-bio strong { color: rgba(13,31,29,0.85); font-weight: 400; }
 .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -120,12 +121,11 @@ h1 em { font-style: italic; color: var(--teal); }
 .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
 
 /* Photo */
-.hero-photo { width: 260px; height: 320px; position: relative; flex-shrink: 0; }
+.hero-photo { width: 260px; height: 320px; position: relative; flex-shrink: 0; overflow: hidden; }
 .photo-inner {
   width: 100%; height: 100%; background: var(--bg3);
   border: 1px solid var(--border);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 0.8rem;
+  display: block; overflow: hidden;
 }
 .photo-inner svg { opacity: 0.2; }
 .photo-inner p {
@@ -138,7 +138,7 @@ h1 em { font-style: italic; color: var(--teal); }
 }
 
 /* ── SECTION BASE ── */
-section { padding: 6rem 5rem; }
+section { padding: 3.5rem 5rem; scroll-margin-top: 120px; }
 section.alt { background: var(--bg2); }
 .section-eyebrow {
   font-family: var(--f-mono); font-size: 0.68rem; font-weight: 400;
@@ -147,18 +147,18 @@ section.alt { background: var(--bg2); }
 }
 .section-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--teal); opacity: 0.6; }
 h2 {
-  font-family: var(--f-display); font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 500; line-height: 1.15; letter-spacing: -0.01em;
+  font-family: var(--f-display); font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 500; line-height: 1.2; letter-spacing: -0.01em;
   margin-bottom: 0.8rem;
 }
 .section-sub {
   font-size: 0.9rem; color: var(--faint);
-  max-width: 520px; margin-bottom: 3.5rem; line-height: 1.8;
+  max-width: 520px; margin-bottom: 2rem; line-height: 1.8;
 }
 
 /* ── ABOUT ── */
-.about-layout { display: flex; flex-direction: column; gap: 3rem; max-width: 860px; }
-.about-body p { font-size: 0.93rem; color: var(--faint); line-height: 1.9; margin-bottom: 1.2rem; }
+.about-layout { display: flex; flex-direction: column; gap: 1.75rem; max-width: 860px; }
+.about-body p { font-size: 0.93rem; color: var(--faint); line-height: 1.7; margin-bottom: 1.2rem; }
 .about-body p:last-child { margin-bottom: 0; }
 .about-body p strong { color: var(--white); font-weight: 400; }
 
@@ -182,7 +182,7 @@ h2 {
 .tab-btn {
   padding: 0.65rem 1.6rem; background: transparent;
   border: none; border-right: 1px solid var(--border);
-  font-family: var(--f-mono); font-size: 0.65rem; font-weight: 400;
+  font-family: var(--f-mono); font-size: 0.72rem; font-weight: 400;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--muted); cursor: pointer; transition: all 0.18s;
   white-space: nowrap;
@@ -191,17 +191,18 @@ h2 {
 .tab-btn:hover { color: var(--teal); background: var(--teal-dim); }
 .tab-btn.active { color: var(--bg); background: var(--teal); }
 
-.tab-panel { display: none; }
+.tab-panel[hidden] { display: none; }
 .tab-panel.active { display: block; }
 
 .projects-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1px; background: var(--border); border: 1px solid var(--border);
 }
+#tab-instructional .projects-grid { grid-template-columns: repeat(4, 1fr); }
 
 /* Card */
 .project-card {
-  background: var(--bg); padding: 2rem;
+  background: var(--bg); padding: 1.5rem;
   display: flex; flex-direction: column;
   text-decoration: none; transition: background 0.2s;
 }
@@ -214,7 +215,7 @@ h2 {
   justify-content: space-between; margin-bottom: 1.2rem;
 }
 .card-cat {
-  font-family: var(--f-mono); font-size: 0.6rem;
+  font-family: var(--f-mono); font-size: 0.62rem;
   letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal);
 }
 .live-dot {
@@ -241,11 +242,12 @@ h2 {
   font-size: 0.82rem; color: var(--faint);
   line-height: 1.75; margin-bottom: 1.5rem; flex: 1;
 }
+.card-meta { display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
 .card-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.5rem; }
 .chip {
   padding: 0.18rem 0.55rem; background: var(--teal-dim);
   border: 1px solid rgba(13,148,136,0.22);
-  font-family: var(--f-mono); font-size: 0.58rem;
+  font-family: var(--f-mono); font-size: 0.62rem;
   color: var(--teal); letter-spacing: 0.05em;
 }
 .card-link {
@@ -259,14 +261,28 @@ h2 {
 .card-link.disabled { color: var(--muted); pointer-events: none; }
 .game-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; margin-top: auto; padding-top: 0.5rem; }
 
+/* ── IMPACT STATS ── */
+.section-intro { font-size: 0.95rem; color: var(--muted); max-width: 600px; margin-bottom: 2rem; line-height: 1.7; }
+.impact-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+.impact-stat { border-left: 2px solid var(--teal); padding-left: 1rem; flex: 1; min-width: 200px; }
+.impact-num { font-family: var(--f-display); font-size: 1.1rem; font-weight: 500; color: var(--teal); margin-bottom: 0.25rem; }
+.impact-desc { font-size: 0.78rem; color: var(--faint); line-height: 1.5; }
+
+/* ── FOCUS STYLES ── */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* ── SKILLS ── */
 .skills-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1px; background: var(--border); border: 1px solid var(--border);
 }
-.skill-block { background: var(--bg2); padding: 2rem; transition: background 0.2s; }
+.skill-block { background: var(--bg2); padding: 1.5rem; transition: background 0.2s; }
 .skill-block:hover { background: var(--bg3); }
-.skill-num { font-family: var(--f-mono); font-size: 0.62rem; color: var(--teal); letter-spacing: 0.15em; margin-bottom: 1rem; }
+.skill-num { display: none; }
 .skill-name { font-family: var(--f-display); font-size: 1rem; font-weight: 500; color: var(--white); margin-bottom: 0.7rem; }
 .skill-list { font-size: 0.78rem; color: var(--muted); line-height: 1.8; }
 
@@ -282,6 +298,13 @@ h2 {
 }
 .contact-inner { position: relative; z-index: 1; }
 .contact-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.contact-row a { text-transform: none; letter-spacing: 0; }
+
+/* ── UTILITIES ── */
+.photo-inner-flush { padding: 0; overflow: hidden; }
+.photo-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+#impact { padding-top: 3rem; padding-bottom: 3rem; }
+.grid-2col { grid-template-columns: repeat(2, 1fr); }
 
 /* ── FOOTER ── */
 footer {
@@ -309,6 +332,8 @@ footer {
   .hero-photo { display: none; }
   section { padding: 4rem 1.5rem; }
   .projects-grid { grid-template-columns: 1fr; }
+  #tab-instructional .projects-grid { grid-template-columns: 1fr; }
+  .grid-2col { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .credentials { grid-template-columns: 1fr; }
   .tab-row { flex-wrap: wrap; width: 100%; }
@@ -324,16 +349,17 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">Dr. Anitha M</a>
+  <a href="#hero" class="nav-logo">Anitha PhD</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#initiatives">Initiatives</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 <div class="evolving-banner">
-  Currently completing Ed.M. at Harvard GSE (May 2026) — this portfolio grows with each project.
+  Currently completing Ed.M. at Harvard GSE (May 2026). This portfolio grows with each project.
 </div>
 <!-- HERO -->
 <section id="hero">
@@ -341,19 +367,41 @@ footer {
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-label fu d1">Harvard Graduate School of Education · Ed.M. 2026</div>
+      <h1 class="fu d2">Learning Designer, Researcher, and Education Program Strategist</h1>
       <p class="hero-bio fu d3">
-        I am <strong>Dr. Anitha M</strong> — a learning designer, researcher, and educator completing my Ed.M. at Harvard GSE. I design evidence-based learning experiences that bridge research and practice, from AI-assisted instructional tools to large-scale government training programs.
+        I am <strong>Anitha PhD</strong>, an education professional completing my Ed.M. at Harvard GSE. I design evidence-based learning experiences, lead educational programs, and build tools and strategies that improve teaching, learning, and STEM education.
       </p>
       <div class="hero-ctas fu d4">
         <a href="#projects" class="btn-primary">View My Work</a>
-        <a href="https://linkedin.com/in/dr-anitha" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+        <a href="YOUR_RESUME_LINK_HERE" target="_blank" rel="noopener noreferrer" class="btn-ghost">Resume ↗</a>
+        <a href="https://linkedin.com/in/dr-anitha" target="_blank" rel="noopener noreferrer" class="btn-ghost">LinkedIn ↗</a>
       </div>
     </div>
     <div class="hero-photo fu d3">
-      <div class="photo-inner" style="padding:0; overflow:hidden;">
-        <img src="photo.jpeg" alt="Dr. Anitha M" style="width:100%; height:100%; object-fit:cover; object-position: center top; display:block;"/>
+      <div class="photo-inner photo-inner-flush">
+        <img src="photo.jpeg" alt="Anitha PhD" class="photo-img"/>
       </div>
-      <div class="photo-frame-deco"></div>
+      <div class="photo-frame-deco" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-eyebrow">Impact</div>
+  <h2>Evidence of scale and outcomes</h2>
+  <div class="impact-stats">
+    <div class="impact-stat">
+      <div class="impact-num">15,000 school leaders reached</div>
+      <div class="impact-desc">Scaled a statewide residential leadership development program in Tamil Nadu from 8,000 to 15,000 participants in partnership with the State Education Department.</div>
+    </div>
+    <div class="impact-stat">
+      <div class="impact-num">100% student success in pilot</div>
+      <div class="impact-desc">Co-led a mathematics intervention in which every student scored above 90, with two students achieving school rank #1.</div>
+    </div>
+    <div class="impact-stat">
+      <div class="impact-num">15+ years across education systems</div>
+      <div class="impact-desc">Built experience across higher education, government systems, nonprofit partnerships, instructional design, research, and STEM teaching.</div>
     </div>
   </div>
 </section>
@@ -361,34 +409,11 @@ footer {
 <!-- ABOUT -->
 <section id="about" class="alt">
   <div class="section-eyebrow">About</div>
-  <h2>Research-informed.<br/>Practice-driven.</h2>
+  <h2>Bridging research, practice, and educational impact</h2>
   <div class="about-layout">
     <div class="about-body">
-      <p>I am a learning designer and researcher currently completing my Ed.M. at <strong>Harvard Graduate School of Education</strong> (Learning Design, Innovation & Technology), where I design instructional tools, evaluate learning programs, and explore how AI can support — rather than replace — deep human learning.</p>
-      <p>Before Harvard, I spent over a decade working across <strong>government education systems, higher education, and nonprofits in India</strong> — including leading a statewide training program for school leaders in Tamil Nadu in partnership with the State Education Department, and managing national-scale content development at IIT Madras.</p>
-      <p>My work sits at the intersection of <strong>learning science, instructional design, and educational technology</strong>. I hold a PhD in Information Science & Technology from Anna University and have published six peer-reviewed articles. My research has evolved from computational systems to the human systems of learning and organizational change.</p>
-    </div>
-    <div class="credentials">
-      <div class="cred">
-        <div class="cred-year">Expected May 2026</div>
-        <div class="cred-inst">Harvard Graduate School of Education</div>
-        <div class="cred-deg">Ed.M. — Learning Design, Innovation & Technology</div>
-      </div>
-      <div class="cred">
-        <div class="cred-year">2016</div>
-        <div class="cred-inst">Anna University, Guindy</div>
-        <div class="cred-deg">PhD, Information Science & Technology · Best Paper Award</div>
-      </div>
-      <div class="cred">
-        <div class="cred-year">2006</div>
-        <div class="cred-inst">Anna University</div>
-        <div class="cred-deg">M.E., Multimedia Technology</div>
-      </div>
-      <div class="cred">
-        <div class="cred-year">1998</div>
-        <div class="cred-inst">Madurai Kamaraj University</div>
-        <div class="cred-deg">B.E., Electronics and Communication Engineering</div>
-      </div>
+      <p>I am an education professional completing my Ed.M. in Learning Design, Innovation & Technology at <strong>Harvard Graduate School of Education</strong>. My work focuses on instructional design, AI in education, program evaluation, and equitable learning experiences for underserved students.</p>
+      <p>Before Harvard, I worked across government education systems, higher education, and nonprofits in India, including leading large-scale training initiatives, designing learning experiences, and supporting teaching, learning, and educational improvement through research-informed practice. I bring a combination of research training, technical fluency, and program leadership.</p>
     </div>
   </div>
 </section>
@@ -397,54 +422,54 @@ footer {
 <section id="projects">
   <div class="section-eyebrow">Portfolio</div>
   <h2>Selected Work</h2>
-  <p class="section-sub">Selected work spanning instructional design, AI in education, research, and strategy.</p>
+  <p class="section-sub">Selected projects in learning design, AI-supported education, research, and education strategy.</p>
 
-  <div class="tab-row">
-    <button class="tab-btn active" onclick="switchTab('instructional', this)">Instructional Design</button>
-    <button class="tab-btn" onclick="switchTab('ai', this)">AI in Education</button>
-    <button class="tab-btn" onclick="switchTab('research', this)">Research & Evaluation</button>
-    <button class="tab-btn" onclick="switchTab('strategy', this)">Strategy & Policy</button>
+  <div class="tab-row" role="tablist" aria-label="Project categories">
+    <button id="btn-instructional" class="tab-btn active" onclick="switchTab('instructional', this)" role="tab" aria-selected="true" aria-controls="tab-instructional" tabindex="0">Instructional Design</button>
+    <button id="btn-ai" class="tab-btn" onclick="switchTab('ai', this)" role="tab" aria-selected="false" aria-controls="tab-ai" tabindex="-1">AI in Education</button>
+    <button id="btn-research" class="tab-btn" onclick="switchTab('research', this)" role="tab" aria-selected="false" aria-controls="tab-research" tabindex="-1">Research & Evaluation</button>
+    <button id="btn-strategy" class="tab-btn" onclick="switchTab('strategy', this)" role="tab" aria-selected="false" aria-controls="tab-strategy" tabindex="-1">Strategy & Policy</button>
   </div>
 
   <!-- INSTRUCTIONAL DESIGN -->
-  <div class="tab-panel active" id="tab-instructional">
+  <div class="tab-panel active" id="tab-instructional" role="tabpanel" aria-labelledby="btn-instructional">
     <div class="projects-grid">
 
-      <a href="https://anitha-76.github.io/T127-TLL-Portfolio/" target="_blank" class="project-card">
-        <div class="card-top"><div class="card-cat">Instructional Design · Client Project</div><div class="live-dot"></div></div>
+      <a href="https://anitha-76.github.io/T127-TLL-Portfolio/" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="card-top"><div class="card-cat">Instructional Design · Client Project</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Teaching & Learning Lab Practicum</div>
-        <div class="card-desc">AI-assisted interactive learning tools and a pre-course microlearning unit built as a real client project for HGSE's Teaching and Learning Lab, using Canvas LMS and Articulate Storyline.</div>
-        <div class="card-chips"><span class="chip">Canvas LMS</span><span class="chip">Articulate Storyline</span><span class="chip">Microlearning</span><span class="chip">Game-Based Learning</span></div>
+        <div class="card-desc">AI-assisted interactive learning tools and a pre-course microlearning unit built as a real client project for HGSE's Teaching and Learning Lab, using Canvas LMS and LXP.</div>
+        <div class="card-chips"><span class="chip">Canvas LMS</span><span class="chip">Microlearning</span><span class="chip">LXP</span><span class="chip">Client Project</span></div>
         <span class="card-link">View Portfolio →</span>
       </a>
 
       <div class="project-card">
-        <div class="card-top"><div class="card-cat">Instructional Design · Lesson Design</div><div class="live-dot"></div></div>
+        <div class="card-top"><div class="card-cat">Instructional Design · Lesson Design</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Research-Based Instructional Design: Lesson Prototype</div>
         <div class="card-desc">Research-backed Grade 6 math lesson integrating 5E and CRA frameworks for under-resourced Tamil Nadu classrooms, grounded in cognitive learning sciences, bilingual pedagogy, and formative assessment principles.</div>
         <div class="card-chips"><span class="chip">5E Model</span><span class="chip">CRA Framework</span><span class="chip">Formative Assessment</span><span class="chip">Learning Sciences</span></div>
         <div class="game-links">
-          <a href="https://drive.google.com/file/d/1QVZYKFHY2Tvv5jYSU-AonMyYm5CZLGGs/view?usp=drive_link" target="_blank" class="card-link">View Prototype →</a>
-          <a href="https://drive.google.com/file/d/1XewrNkgoFqLwbR9VxsNY3eXCIO6tjuNr/view?usp=drive_link" target="_blank" class="card-link">View Report →</a>
+          <a href="https://drive.google.com/file/d/1QVZYKFHY2Tvv5jYSU-AonMyYm5CZLGGs/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="card-link">View Prototype →</a>
+          <a href="https://drive.google.com/file/d/1XewrNkgoFqLwbR9VxsNY3eXCIO6tjuNr/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="card-link">View Report →</a>
         </div>
       </div>
 
-      <a href="https://drive.google.com/file/d/1uaCMsac23J9PX620H5jo8SFkej8n0eq-/view?usp=drive_link" target="_blank" class="project-card">
-        <div class="card-top"><div class="card-cat">Instructional Design · Program Design</div><div class="live-dot"></div></div>
+      <a href="https://drive.google.com/file/d/1uaCMsac23J9PX620H5jo8SFkej8n0eq-/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="card-top"><div class="card-cat">Instructional Design · Program Design</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">How People Learn: After-School Math Design Proposal</div>
-        <div class="card-desc">Learning design proposal for an after-school online mathematics program serving middle school students from marginalized communities in Tamil Nadu government schools. Grounded in learning science frameworks including situated learning, constructivism, metacognition, and social-emotional learning, this design addresses foundational mathematics gaps documented in ASER and State Achievement Survey data. The program integrates real-world problem-solving, peer collaboration, reflective journaling, and emotional check-ins through a low-infrastructure, mobile-accessible format, designed specifically for first-generation learners in bilingual, low-resource contexts.</div>
+        <div class="card-desc">Design proposal for an after-school online mathematics program for middle school students in marginalized Tamil Nadu government schools. Grounded in learning science, equity-centered design, and low-infrastructure delivery for bilingual, first-generation learners.</div>
         <div class="card-chips"><span class="chip">HPL Frameworks</span><span class="chip">Constructivism</span><span class="chip">SEL</span><span class="chip">Equity-Centered Design</span></div>
         <span class="card-link">View Proposal →</span>
       </a>
 
       <div class="project-card">
-        <div class="card-top"><div class="card-cat">Instructional Design · MVP Prototyping</div><div class="live-dot"></div></div>
+        <div class="card-top"><div class="card-cat">Instructional Design · MVP Prototyping</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Impact by Design: Teacher Autonomy & School Leadership</div>
-        <div class="card-desc">Full-semester design studio applying Lean Impact methodology to teacher autonomy in school leadership — with ecosystem mapping, iterative prototyping, and a 2-minute pitch to HGSE faculty. Culminated in a live MVP construct prototype.</div>
+        <div class="card-desc">Full-semester design studio applying Lean Impact methodology to teacher autonomy in school leadership, with ecosystem mapping, iterative prototyping, and a 2-minute pitch to HGSE faculty. Culminated in a live MVP construct prototype.</div>
         <div class="card-chips"><span class="chip">Lean Impact</span><span class="chip">Design Thinking</span><span class="chip">Stakeholder Mapping</span><span class="chip">MVP Prototyping</span></div>
         <div class="game-links">
-          <a href="https://drive.google.com/file/d/1PCXDEHyuVbVRSmfXElcX5hFujxlbDCX1/view?usp=drive_link" target="_blank" class="card-link">View Pitch →</a>
-          <a href="https://anitha-76.github.io/MVP-Pacing-Tool/" target="_blank" class="card-link">Try Prototype →</a>
+          <a href="https://drive.google.com/file/d/1PCXDEHyuVbVRSmfXElcX5hFujxlbDCX1/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="card-link">View Pitch →</a>
+          <a href="https://anitha-76.github.io/MVP-Pacing-Tool/" target="_blank" rel="noopener noreferrer" class="card-link">Try Prototype →</a>
         </div>
       </div>
 
@@ -452,19 +477,19 @@ footer {
   </div>
 
   <!-- AI IN EDUCATION -->
-  <div class="tab-panel" id="tab-ai">
+  <div class="tab-panel" id="tab-ai" role="tabpanel" aria-labelledby="btn-ai" hidden>
     <div class="projects-grid">
 
-      <a href="#" class="project-card wip">
+      <div class="project-card wip">
         <div class="card-top"><div class="card-cat">AI in Education · Framework Design</div><span class="wip-badge">In Progress</span></div>
         <div class="card-title">Metacognitive Partnership (MCP) Framework</div>
         <div class="card-desc">Research-backed framework co-developed for HGSE faculty addressing how educators and students calibrate cognitive partnership with generative AI. Includes task design, rubrics, and educator PD workshop structure.</div>
         <div class="card-chips"><span class="chip">AI Frameworks</span><span class="chip">Educator PD</span><span class="chip">Research Synthesis</span><span class="chip">Client Project</span></div>
         <span class="card-link disabled">Coming Soon</span>
-      </a>
+      </div>
 
-      <a href="https://algebra-ide-app.vercel.app/" target="_blank" class="project-card">
-        <div class="card-top"><div class="card-cat">AI in Education · Instructional Prototype</div><div class="live-dot"></div></div>
+      <a href="https://algebra-ide-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="card-top"><div class="card-cat">AI in Education · Instructional Prototype</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Math Inquiry Studio</div>
         <div class="card-desc">An instructor-facilitated prototype for middle school after-school programs, built on a 5E lesson structure with Universal Design for Learning (UDL) principles. Currently focused on algebra, designed to expand across math topics.</div>
         <div class="card-chips"><span class="chip">5E Model</span><span class="chip">UDL</span><span class="chip">Middle School</span><span class="chip">Inquiry-Based Learning</span></div>
@@ -472,15 +497,15 @@ footer {
       </a>
 
       <div class="project-card">
-        <div class="card-top"><div class="card-cat">AI in Education · Rapid Prototyping</div><div class="live-dot"></div></div>
+        <div class="card-top"><div class="card-cat">AI in Education · Rapid Prototyping</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Vibe Coding: AI-Assisted Math Learning Tools</div>
-        <div class="card-desc">Built 4 interactive math learning tools using AI-assisted development — demonstrating rapid prototyping, prompt design, and game-based learning design. Tools cover prime numbers, integer operations, number systems, and algebra.</div>
-        <div class="card-chips"><span class="chip">Phaser 3</span><span class="chip">p5.js</span><span class="chip">AI Prototyping</span><span class="chip">Game-Based Learning</span></div>
+        <div class="card-desc">Built 4 interactive math learning tools using AI-assisted development, demonstrating rapid prototyping, prompt design, and game-based learning design. Tools cover prime numbers, integer operations, number systems, and algebra.</div>
+        <div class="card-chips"><span class="chip">AI Prototyping</span><span class="chip">Game-Based Learning</span></div>
         <div class="game-links">
-          <a href="https://anitha-76.github.io/prime-number-hunt/" target="_blank" class="card-link">Prime Hunt →</a>
-          <a href="https://anitha-76.github.io/integer-space-game/" target="_blank" class="card-link">Integer Game →</a>
-          <a href="https://anitha-76.github.io/number-system-converter/" target="_blank" class="card-link">Number Converter →</a>
-          <a href="https://anitha-76.github.io/Worksheets/" target="_blank" class="card-link">Algebra Quest →</a>
+          <a href="https://anitha-76.github.io/prime-number-hunt/" target="_blank" rel="noopener noreferrer" class="card-link">Prime Hunt →</a>
+          <a href="https://anitha-76.github.io/integer-space-game/" target="_blank" rel="noopener noreferrer" class="card-link">Integer Game →</a>
+          <a href="https://anitha-76.github.io/number-system-converter/" target="_blank" rel="noopener noreferrer" class="card-link">Number Converter →</a>
+          <a href="https://anitha-76.github.io/Worksheets/" target="_blank" rel="noopener noreferrer" class="card-link">Algebra Quest →</a>
         </div>
       </div>
 
@@ -488,60 +513,60 @@ footer {
   </div>
 
   <!-- RESEARCH & EVALUATION -->
-  <div class="tab-panel" id="tab-research">
+  <div class="tab-panel" id="tab-research" role="tabpanel" aria-labelledby="btn-research" hidden>
     <div class="projects-grid">
 
-      <a href="#" class="project-card wip">
+      <div class="project-card wip">
         <div class="card-top"><div class="card-cat">Research & Evaluation · Program Evaluation</div><span class="wip-badge">In Progress</span></div>
         <div class="card-title">Formative Evaluation: STEAM Comic Book</div>
-        <div class="card-desc">Formative evaluation of a STEAM comic book used in an international school in Barcelona — mixed methods design using surveys, interviews, and classroom observation following AEA standards and human subjects protocols.</div>
-        <div class="card-chips"><span class="chip">Mixed Methods</span><span class="chip">Evaluation Design</span><span class="chip">IRB Protocols</span></div>
+        <div class="card-desc">Formative evaluation of a STEAM comic book used in an international school in Barcelona, using mixed methods design including surveys, interviews, and classroom observation following AEA standards and human subjects protocols.</div>
+        <div class="card-chips"><span class="chip">Mixed Methods</span><span class="chip">Evaluation Design</span><span class="chip">Client Project</span></div>
         <span class="card-link disabled">Coming Soon</span>
-      </a>
+      </div>
 
-      <a href="https://drive.google.com/file/d/1Nh2Vgt3tsUfl-_p9yBAnCkzA45D9BQGN/view?usp=drive_link" target="_blank" class="project-card">
-        <div class="card-top"><div class="card-cat">Research & Evaluation · Qualitative Research</div><div class="live-dot"></div></div>
+      <a href="https://drive.google.com/file/d/1Nh2Vgt3tsUfl-_p9yBAnCkzA45D9BQGN/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="card-top"><div class="card-cat">Research & Evaluation · Qualitative Research</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Qualitative Research Synthesis</div>
         <div class="card-desc">Qualitative research synthesis examining student use of learning spaces, combining interview coding, ethnographic observation, and collaborative data analysis.</div>
         <div class="card-chips"><span class="chip">Qualitative Research</span><span class="chip">Thematic Analysis</span><span class="chip">Memo Writing</span></div>
         <span class="card-link">View Memo →</span>
       </a>
 
-      <a href="#" class="project-card wip">
+      <div class="project-card wip">
         <div class="card-top"><div class="card-cat">Research & Evaluation · Independent Study</div><span class="wip-badge">In Progress</span></div>
-        <div class="card-title">Independent Study</div>
-        <div class="card-desc">Independent research study in progress at Harvard GSE. Report forthcoming.</div>
-        <div class="card-chips"><span class="chip">Research</span><span class="chip">Harvard GSE</span></div>
+        <div class="card-title">Gender Differences and Teacher Biases in Mathematics Education</div>
+        <div class="card-desc">Independent study examining how gender differences and teacher biases may shape mathematics learning experiences and outcomes.</div>
+        <div class="card-chips"><span class="chip">Research</span></div>
         <span class="card-link disabled">Coming Soon</span>
-      </a>
+      </div>
 
     </div>
   </div>
 
   <!-- STRATEGY & POLICY -->
-  <div class="tab-panel" id="tab-strategy">
+  <div class="tab-panel" id="tab-strategy" role="tabpanel" aria-labelledby="btn-strategy" hidden>
     <div class="projects-grid">
 
-      <a href="https://drive.google.com/file/d/1wwcge9ca248AxZ1BW7n-ItIufDSNmcg4/view?usp=drive_link" target="_blank" class="project-card">
-        <div class="card-top"><div class="card-cat">Strategy & Policy · Systems Change</div><div class="live-dot"></div></div>
+      <a href="https://drive.google.com/file/d/1wwcge9ca248AxZ1BW7n-ItIufDSNmcg4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="card-top"><div class="card-cat">Strategy & Policy · Systems Change</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Scaling & Systems Change Analysis: eVidyaloka</div>
-        <div class="card-desc">Scaling analysis of eVidyaloka, a nonprofit bridging the teacher shortage crisis in India's rural government schools through volunteerism and technology. Applying the DEV320M scaling framework, including causal mapping, systems diagnosis, theory of change, and pathway analysis, this paper evaluates eVidyaloka's strategy for reaching 1 crore children across India's aspirational districts, examining the organizational, systemic, and financing conditions required to move from 2 lakh students today to sustainable impact at national scale.</div>
+        <div class="card-desc">Systems-change analysis of eVidyaloka, examining how volunteerism, technology, and organizational strategy could support scalable impact in rural government schools across India.</div>
         <div class="card-chips"><span class="chip">Theory of Change</span><span class="chip">Systems Thinking</span><span class="chip">Nonprofit Strategy</span></div>
         <span class="card-link">View Analysis →</span>
       </a>
 
-      <a href="https://drive.google.com/file/d/1TnwXntI1pGcmQGlfMPfbYFVhXlxFGLCJ/view?usp=drive_link" target="_blank" class="project-card">
-        <div class="card-top"><div class="card-cat">Strategy & Policy · Policy Analysis</div><div class="live-dot"></div></div>
+      <a href="https://drive.google.com/file/d/1TnwXntI1pGcmQGlfMPfbYFVhXlxFGLCJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="card-top"><div class="card-cat">Strategy & Policy · Policy Analysis</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Comparative Education Policy Analysis</div>
-        <div class="card-desc">Policy analysis examining why teacher intrinsic motivation remains persistently low in Tamil Nadu government schools despite significant public investment and what can realistically be done about it. Drawing on Self-Determination Theory, international comparative evidence, and ground-level data from Tamil Nadu's 37,000 schools, this analysis identifies four interconnected root causes, evaluates four policy alternatives across equity, feasibility, scalability and flexibility criteria, and recommends a phased implementation strategy designed for a fiscally constrained public system.</div>
+        <div class="card-desc">Policy analysis of teacher motivation in Tamil Nadu government schools, examining root causes, comparing policy alternatives, and recommending an equity-focused implementation strategy for a fiscally constrained public system.</div>
         <div class="card-chips"><span class="chip">Policy Analysis</span><span class="chip">Comparative Research</span><span class="chip">Equity</span></div>
         <span class="card-link">View Paper →</span>
       </a>
 
-      <a href="https://drive.google.com/file/d/1HTT1wKFpKnwS66ecD0ckbSZP-dCv-8nX/view?usp=drive_link" target="_blank" class="project-card">
-        <div class="card-top"><div class="card-cat">Strategy & Policy · Innovation Strategy</div><div class="live-dot"></div></div>
+      <a href="https://drive.google.com/file/d/1HTT1wKFpKnwS66ecD0ckbSZP-dCv-8nX/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="card-top"><div class="card-cat">Strategy & Policy · Innovation Strategy</div><div class="live-dot" aria-hidden="true"></div></div>
         <div class="card-title">Why Innovations in Education Fail</div>
-        <div class="card-desc">Strategic analysis examining whether Sarvam AI, India's state-backed sovereign large language model, can meaningfully transform teaching and learning in vernacular K-12 classrooms. Applying Christensen's disruptive innovation theory, interdependence-modularity framework, value network analysis, and discovery-driven planning, this paper argues that Sarvam's multilingual, voice-first design positions it as education-enabling infrastructure for the 200 million+ students learning in regional languages, a market global LLMs are structurally disincentivized to serve.</div>
+        <div class="card-desc">Strategic analysis of whether Sarvam AI can support teaching and learning in vernacular K-12 classrooms, with a focus on multilingual access, innovation strategy, and education system fit.</div>
         <div class="card-chips"><span class="chip">Innovation Strategy</span><span class="chip">Org Design</span><span class="chip">Disruptive Innovation</span></div>
         <span class="card-link">View Analysis →</span>
       </a>
@@ -552,41 +577,58 @@ footer {
 
 </section>
 
+<!-- INITIATIVES -->
+<section id="initiatives">
+  <div class="section-eyebrow">Initiatives</div>
+  <h2>Leadership & Initiatives</h2>
+  <p class="section-sub">Founder-led and mission-driven initiatives focused on STEM education, educational equity, and systems-level impact.</p>
+  <div class="projects-grid grid-2col">
+    <div class="project-card">
+      <div class="card-top"><div class="card-cat">Co-Founder & Program Director · STEM Education</div></div>
+      <div class="card-title">Arivom Academy Foundation</div>
+      <div class="card-desc">Co-founded and led a mathematics support initiative for underserved public-school students, combining foundation skill-building, mentorship, and STEM pathway preparation. The pilot achieved 100% student success, with all students scoring above 90 in mathematics and two students securing school rank #1.</div>
+      <div class="card-chips"><span class="chip">STEM Equity</span><span class="chip">Program Design</span><span class="chip">Curriculum Design</span><span class="chip">Mentorship</span></div>
+      <span class="card-link disabled">Website Coming Soon</span>
+    </div>
+    <a href="https://peraivukoodam.org/" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="card-top"><div class="card-cat">Co-Founder · Policy Analysis & Impact Evaluation</div><div class="live-dot" aria-hidden="true"></div></div>
+      <div class="card-title">Peraivu Koodam Foundation</div>
+      <div class="card-desc">Co-founded an initiative focused on policy analysis and impact evaluation to support evidence-based educational decision-making for underserved communities. The work centers on research, partnerships, and developing policy responses to contemporary equity challenges.</div>
+      <div class="card-chips"><span class="chip">Policy Analysis</span><span class="chip">Impact Evaluation</span><span class="chip">Educational Equity</span><span class="chip">Research Partnerships</span></div>
+      <span class="card-link">View Initiative →</span>
+    </a>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills" class="alt">
   <div class="section-eyebrow">Competencies</div>
   <h2>Skills & Expertise</h2>
-  <p class="section-sub">Core competencies developed across 15+ years in education, research, and Harvard Ed.M. coursework.</p>
+  <p class="section-sub">Core competencies developed across instructional design, research, strategy, project leadership, and educational program development.</p>
   <div class="skills-grid">
     <div class="skill-block">
-      <div class="skill-num">01</div>
       <div class="skill-name">Instructional Design</div>
-      <div class="skill-list">5E Model · CRA Progression · Backward Design · UDL · Needs Analysis · Microlearning · Game-Based Learning · Canvas LMS · Articulate Storyline</div>
+      <div class="skill-list">5E Model · CRA Progression · Backward Design · UDL · Microlearning · Learning Sciences · Canvas LMS · LXP</div>
     </div>
     <div class="skill-block">
-      <div class="skill-num">02</div>
-      <div class="skill-name">AI in Education</div>
-      <div class="skill-list">AI-Assisted Prototyping · Prompt Design for Learning · Metacognitive AI Frameworks · Generative AI Integration · Rapid Prototyping</div>
-    </div>
-    <div class="skill-block">
-      <div class="skill-num">03</div>
       <div class="skill-name">Research & Evaluation</div>
-      <div class="skill-list">Formative Evaluation · Mixed Methods · Qualitative Research · IRB Protocols · AEA Standards · Impact Assessment · Logic Models</div>
+      <div class="skill-list">Mixed Methods · Qualitative Research · Thematic Analysis · Formative Evaluation · Research Synthesis · Memo Writing · Evidence-Based Decision-Making</div>
     </div>
     <div class="skill-block">
-      <div class="skill-num">04</div>
-      <div class="skill-name">Systems & Strategy</div>
-      <div class="skill-list">Theory of Change · Stakeholder Mapping · Scaling Strategy · Lean Impact · Ecosystem Analysis · Program Design</div>
+      <div class="skill-name">Strategy & Policy</div>
+      <div class="skill-list">Policy Analysis · Theory of Change · Systems Thinking · Stakeholder Mapping · Scaling Strategy · Program Design</div>
     </div>
     <div class="skill-block">
-      <div class="skill-num">05</div>
-      <div class="skill-name">Training & Facilitation</div>
-      <div class="skill-list">Workshop Design · Webinar Facilitation · Capacity Building · SME Coordination · Adult Learning · Virtual & In-Person Delivery</div>
+      <div class="skill-name">Curriculum & Pedagogy</div>
+      <div class="skill-list">Curriculum Design · Learning Sequence Design · Bilingual Pedagogy · Culturally Responsive Pedagogy · Conceptual Understanding · Assessment Design</div>
     </div>
     <div class="skill-block">
-      <div class="skill-num">06</div>
+      <div class="skill-name">Project Management, Analysis & Problem Solving</div>
+      <div class="skill-list">Project Leadership · Cross-Functional Coordination · Team Management · Analytical Thinking · Problem Solving · Research Methodology · Program Assessment · Communication Protocols</div>
+    </div>
+    <div class="skill-block">
       <div class="skill-name">Technical Skills</div>
-      <div class="skill-list">HTML · CSS · JavaScript · No-Code & Low-Code Tools · Advanced Excel · Data Visualization · Educational Technology Platforms · GitHub</div>
+      <div class="skill-list">HTML · CSS · No-Code & Low-Code Tools · Data Visualization · Educational Technology Platforms · GitHub · Advanced Excel</div>
     </div>
   </div>
 </section>
@@ -597,26 +639,37 @@ footer {
   <div class="contact-inner">
     <div class="section-eyebrow">Contact</div>
     <h2>Let's connect.</h2>
-    <p class="section-sub">Bridging learning design, evidence, and systems thinking to advance equitable education. Available from June 2026.</p>
+    <p class="section-sub">Open to roles at the intersection of STEM learning, strategy, research, and educational impact. Available from June 2026.</p>
     <div class="contact-row">
       <a href="mailto:anitha_m@gse.harvard.edu" class="btn-primary">anitha_m@gse.harvard.edu</a>
-      <a href="https://linkedin.com/in/dr-anitha" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+      <a href="mailto:manitha.kpm@gmail.com" class="btn-ghost">manitha.kpm@gmail.com</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span>© 2026 Dr. Anitha M</span>
-  <span>Learning Designer · Researcher · Educator</span>
+  <span>© 2026 Anitha PhD</span>
+  <span>Learning Designer · Researcher · Education Strategist</span>
 </footer>
 
 <script>
 function switchTab(id, btn) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
+  });
+  document.querySelectorAll('.tab-panel').forEach(p => {
+    p.classList.remove('active');
+    p.hidden = true;
+  });
   btn.classList.add('active');
-  document.getElementById('tab-' + id).classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.setAttribute('tabindex', '0');
+  const panel = document.getElementById('tab-' + id);
+  panel.classList.add('active');
+  panel.hidden = false;
 }
 
 const obs = new IntersectionObserver(entries => {
